@@ -1,0 +1,56 @@
+.icon_box{
+    width: 100px;
+    height: 100px;
+    background-color: black
+}
+.white_block{
+    height: 100%;
+    background-color: white;
+    border-radius: 0px 8px 8px 0px;
+}
+.white_block > p {
+    flex-wrap: wrap;
+    word-wrap: break-word;
+}
+.icon_blue{
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+    padding: 22px 0;
+    color: white;
+    background-color: #30a5ff;
+    border-radius: 8px 0px 0px 8px;
+}
+.icon_orange{
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+    padding: 22px 0;
+    color: white;
+    background-color: #ffb53e;
+    border-radius: 8px 0px 0px 8px;
+}
+.icon_green{
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+    padding: 22px 0;
+    color: white;
+    background-color: #1ebfae;
+    border-radius: 8px 0px 0px 8px;
+}
+.icon_red{
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+    padding: 22px 0;
+    color: white;
+    background-color: #f9243f;
+    border-radius: 8px 0px 0px 8px;
+}
+.description{
+    font-size: 20px;
+}
+.rowWidgetsCard{
+    height: 100px;
+}
