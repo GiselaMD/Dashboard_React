@@ -20,7 +20,7 @@ class PageViews extends Component {
                         {
                             label: "Views",
                             data: this.props.pageViews.map((each) => each.views),
-                            backgroundColor: 'rgb(255, 99, 132)',
+                            backgroundColor: 'rgb(180, 175, 255)',
                         }
                     ]
                 }
@@ -35,17 +35,16 @@ class PageViews extends Component {
         return(
             
             <div>
-            
             {lineChartData ?   <Line
                     data={lineChartData}
                     options={{
                         maintainAspectRatio: false,
                         layout:{
                             padding:{
-                                left: 50,
-                                right: 50,
+                                left: 20,
+                                right: 20,
                                 top: 100,
-                                bottom: 0,
+                                bottom: 100,
                             }
                         },
                         title:{
@@ -59,8 +58,8 @@ class PageViews extends Component {
                             position: 'right',
                         }
                     }}
-                    height={500}
-                    width={700}
+                    height={600}
+                    width={window.innerWidth}
                     />
             : null }
             </div>

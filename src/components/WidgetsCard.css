@@ -18,7 +18,7 @@
     align-items: center;
     padding: 22px 0;
     color: white;
-    background-color: #30a5ff;
+    background-color: #36a2eb;
     border-radius: 8px 0px 0px 8px;
 }
 .icon_orange{
@@ -27,7 +27,7 @@
     align-items: center;
     padding: 22px 0;
     color: white;
-    background-color: #ffb53e;
+    background-color: #ffce56;
     border-radius: 8px 0px 0px 8px;
 }
 .icon_green{
@@ -36,7 +36,7 @@
     align-items: center;
     padding: 22px 0;
     color: white;
-    background-color: #1ebfae;
+    background-color: #4bc0c0;
     border-radius: 8px 0px 0px 8px;
 }
 .icon_red{
@@ -45,7 +45,7 @@
     align-items: center;
     padding: 22px 0;
     color: white;
-    background-color: #f9243f;
+    background-color: #f8324b;
     border-radius: 8px 0px 0px 8px;
 }
 .description{
@@ -54,3 +54,11 @@
 .rowWidgetsCard{
     height: 100px;
 }
+
+/* #ff6384 -- rosa
+#36a2eb -- azul
+#ffce56 -- amarelo
+#4bc0c0 -- azul esverdeado
+#9966ff -- roxo #a47bf6
+#ff9f40 -- laranja
+#f8324b -- vermelho */
