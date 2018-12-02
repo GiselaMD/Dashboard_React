@@ -10,3 +10,9 @@ export const getWidgets = () =>
   fetch(`${api}/widgets`, { method: 'GET', headers })
     .then(res => res.json())
     .then(data => data)
+
+//Get pageViews
+export const getPageViews = () =>
+  fetch(`${api}/pageViews`, { method: 'GET', headers })
+    .then(res => res.json())
+    .then(data => data)

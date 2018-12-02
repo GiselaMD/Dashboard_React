@@ -1,51 +1,41 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
-import { Row, Col} from 'react-bootstrap';
-import {LineChart,  AreaChart, d3 } from 'react-d3-components';
 import {Line} from 'react-chartjs-2';
+import { fetchPageViews } from '../actions/pageViewsActions';
 
 class PageViews extends Component {
     state = {
         lineChartData: {},
     }
 
-    componentWillMount(){
-        this.getLineChartData();
-        
+    componentDidMount(){
+        //pageViews.map((year) => year.month) ===> ["January", "February", "March", "April", "May", "June", "July"]
+        //pageViews.map((each) => each.views) ===> [674, 651, 93, 624, 805, 619, 390]
+        this.props.getPageViews().then(
+            () => this.setState({
+                lineChartData: {
+                    labels: this.props.pageViews.map((year) => year.month),
+                    datasets: [
+                        {
+                            label: "Views",
+                            data: this.props.pageViews.map((each) => each.views),
+                            backgroundColor: 'rgb(255, 99, 132)',
+                        }
+                    ]
+                }
+            })
+        )
     }
-    
-    getLineChartData(){
-        //Ajax calls here
-        this.setState({
-            lineChartData: {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
-                datasets: [
-                    {
-                        label: "Site Traffic Overview",
-                        data: [883, 475, 883, 3, 99, 819, 725],
-                        backgroundColor: 'rgb(255, 99, 132)',
-                    }
-                ]
-            }
-        });
-        
-    }
+
     render(){
         console.log(this.state);
+        console.log("pageviews: ", this.props.pageViews);
         const {lineChartData} = this.state
         return(
             
             <div>
-             {/* <AreaChart
-                axes
-                axisLabels={{x: '', y: 'Site Traffic Overview'}}
-                data={this.state.data}
-                width={1200}
-                height={600}
-                margin={{top: 10, right: 10, bottom: 50, left: 100}}
-                interpolate={'cardinal'}
-                /> */}
+            
             {lineChartData ?   <Line
                     data={lineChartData}
                     options={{
@@ -78,12 +68,12 @@ class PageViews extends Component {
     }
 }
 
-// const mapStateToProps = ({widgets}) => ({
-//     widgets: widgets
-//   });
+const mapStateToProps = ({pageViews}) => ({
+    pageViews: pageViews
+  });
   
-//   const mapDispatchToProps = dispatch => ({
-//     getWidgets: () => dispatch(fetchWidgets())
-//   });
+  const mapDispatchToProps = dispatch => ({
+    getPageViews: () => dispatch(fetchPageViews())
+  });
 
-export default PageViews; 
+export default connect(mapStateToProps, mapDispatchToProps)(PageViews); 
