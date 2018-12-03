@@ -29,6 +29,9 @@ class Chat extends Component {
             time: '1 min ago',
           } 
           this.props.addMessage(newMessage)
+          this.setState({
+              message: '',
+          })
         } else {
           this.setState({
             notValid: true
@@ -47,31 +50,33 @@ class Chat extends Component {
             <div className="chat_box">
                 <Row>
                     <Col md={8}>
-                    <div className="chat_box_title">
-                      <MdChatBubbleOutline className="chat_icon"/>
-                      <p className="title">Chat</p>
-                    </div>
-                    {messages ? messages.map((message) => {
-                        return(
-                            <MessageCard key={message.index} message={message}/>
-                        )
-                    })
-                    : null}
-                    <div className="chat_box_input">
-                        <form onSubmit={this.addNewMessage}>
-                                <input 
-                                    name="message" 
-                                    placeholder={'Type your message...'} 
-                                    onChange={(e) => this.handleMessageChange(e)}
-                                    value={this.state.message}/>
-                                <Button type="submit" bsStyle="primary">Send</Button>
-                        </form>
-                    </div>
-                    <div>
-                    {this.state.notValid && (
-                        <h3>Please enter all values...</h3> 
-                    )}
-                    </div>
+                        <div className="chat_box_title">
+                            <MdChatBubbleOutline className="chat_icon"/>
+                            <p className="title">Chat</p>
+                        </div>
+                        <div className="messages_box">
+                            {messages ? messages.map((message) => {
+                                return(
+                                    <MessageCard key={message.index} message={message}/>
+                                )
+                            })
+                            : null}
+                        </div>
+                        <div className="chat_box_input">
+                            <form onSubmit={this.addNewMessage}>
+                                    <input 
+                                        name="message" 
+                                        placeholder={'Type your message...'} 
+                                        onChange={(e) => this.handleMessageChange(e)}
+                                        value={this.state.message}/>
+                                    <Button type="submit" bsStyle="primary">Send</Button>
+                            </form>
+                        </div>
+                        <div>
+                        {this.state.notValid && (
+                            <h3>Please enter all values...</h3> 
+                        )}
+                        </div>
                     </Col>
                 </Row>
             </div>

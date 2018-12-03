@@ -25,6 +25,9 @@
 .row{
   margin: 0!important;
 }
+.copyright{
+  font-size: 14px;
+}
 
 @keyframes App-logo-spin {
   from {

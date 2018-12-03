@@ -1,6 +1,10 @@
 .chat_box{
     padding-bottom: 40px
 }
+.messages_box{
+    max-height: 50vh;
+    overflow: auto;
+}
 .chat_box_title{
     background-color: white;
     border-radius: 8px 8px 0 0;

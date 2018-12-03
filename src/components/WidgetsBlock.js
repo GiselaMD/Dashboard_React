@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './WidgetsBlock.css';
 import { connect } from 'react-redux';
 import { fetchWidgets } from '../actions/widgetsActions';
 import WidgetsCard from './WidgetsCard';

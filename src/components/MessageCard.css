@@ -5,9 +5,7 @@
     border-bottom-style: solid;
     border-bottom-color: #c9c9c9;
     border-bottom-width: 1px;
-    overflow: auto;
     height: auto;
-    max-height: 50vh;
     flex: 1;
     font-family: 'Lucida Sans', Verdana, sans-serif;
 }
@@ -39,4 +37,5 @@
 .message_body{
     float: left;
     font-size: 18px;
+    text-align: left;
 }

@@ -11,6 +11,8 @@
 .white_block > p {
     flex-wrap: wrap;
     word-wrap: break-word;
+    text-align: left;
+    padding-left: 10px;
 }
 .icon_blue{
     font-size: 40px;
@@ -48,13 +50,36 @@
     background-color: #f8324b;
     border-radius: 8px 0px 0px 8px;
 }
-.description{
+.widget_value{
+    margin-top:10px;
+}
+.widget_description{
     font-size: 20px;
 }
 .rowWidgetsCard{
     height: 100px;
 }
 
+@media screen and (max-width: 992px) {
+    .white_block > p {
+      text-align: center
+    }
+    .white_block{
+        border-radius: 0 0 8px 8px;
+    }
+    .icon_blue{
+        border-radius: 8px 8px 0 0;
+    }
+    .icon_orange{
+        border-radius: 8px 8px 0 0;
+    }
+    .icon_green{
+        border-radius: 8px 8px 0 0;
+    }
+    .icon_red{
+        border-radius: 8px 8px 0 0;
+    }
+  }
 /* #ff6384 -- rosa
 #36a2eb -- azul
 #ffce56 -- amarelo
