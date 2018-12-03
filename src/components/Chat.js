@@ -44,7 +44,7 @@ class Chat extends Component {
     render(){
         const {messages} = this.props
         return(
-            <div>
+            <div className="chat_box">
                 <Row>
                     <Col md={8}>
                     <div className="chat_box_title">
@@ -64,7 +64,7 @@ class Chat extends Component {
                                     placeholder={'Type your message...'} 
                                     onChange={(e) => this.handleMessageChange(e)}
                                     value={this.state.message}/>
-                                <Button type="submit">Send</Button>
+                                <Button type="submit" bsStyle="primary">Send</Button>
                         </form>
                     </div>
                     <div>

@@ -1,3 +1,6 @@
+.chat_box{
+    padding-bottom: 40px
+}
 .chat_box_title{
     background-color: white;
     border-radius: 8px 8px 0 0;
@@ -22,6 +25,10 @@
 }
 .chat_box_input input {
     font-weight: 400;
+    font-size: 22px;
+    width: 80%;
+    margin-right: 20px;
+    border-width: 0.5px;
 }
 
 /* overflow-y:auto;scroll
