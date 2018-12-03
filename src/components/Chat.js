@@ -5,16 +5,15 @@ import { Row, Col, Button} from 'react-bootstrap'
 import { connect } from 'react-redux';
 import { MdChatBubbleOutline } from 'react-icons/md'
 import MessageCard from './MessageCard';
+import { fetchMessages } from '../actions/messagesActions';
 
 class Chat extends Component {
-    state = {
-      
-    }
-
     componentDidMount(){
+        this.props.getMessages();
     }
 
     render(){
+        const {messages} = this.props
         return(
             <div>
                 <Row>
@@ -23,7 +22,12 @@ class Chat extends Component {
                       <MdChatBubbleOutline className="chat_icon"/>
                       <p className="title">Chat</p>
                     </div>
-                    <MessageCard/>
+                    {messages ? messages.map((message) => {
+                        return(
+                            <MessageCard key={message.userName} message={message}/>
+                        )
+                    })
+                    : null}
                     <div className="chat_box_input">
                         <form>
                                 <input placeholder={'Type your message...'} />
@@ -37,12 +41,12 @@ class Chat extends Component {
     }
 }
 
-// const mapStateToProps = ({pageViews}) => ({
-//     pageViews: pageViews
-//   });
+const mapStateToProps = ({messages}) => ({
+    messages: messages
+  });
   
-//   const mapDispatchToProps = dispatch => ({
-//     getPageViews: () => dispatch(fetchPageViews())
-//   });
+  const mapDispatchToProps = dispatch => ({
+    getMessages: () => dispatch(fetchMessages())
+  });
 
-export default Chat; 
+export default connect(mapStateToProps, mapDispatchToProps)(Chat); 

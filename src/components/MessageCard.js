@@ -4,22 +4,40 @@ import './MessageCard.css'
 import { Row, Col} from 'react-bootstrap'
 
 const MessageCard = (props) => {
+    const {message} = props
     return(
         <div className="message_box">
-           <Row>
-               <Col md={2} className="img_profile"> {/*mdPush={10}*/}
-                    <img src="http://dev.4all.com:3050/imgs/profile1.jpg"/>
-               </Col>
-               <Col md={10}>{/*mdPull={1}*/}
+            {message.displayPortraitLeft ? 
+            <Row>
+                <Col md={2} className="img_profile"> 
+                    <img src={message.portrait}/>
+                </Col>
+                <Col md={10}>
                     <div className="message_name">
-                        <strong>John Doe</strong>
-                        <p className="message_time">32 mins ago</p>
+                        <strong>{message.userName}</strong>
+                        <p className="message_time">{message.time}</p>
                     </div> <br/>
                     <div className="message_body">
-                    Laborum sit veniam adipisicing cillum laborum officia officia.
+                    {message.message}
                     </div>
-               </Col>
-           </Row>
+                </Col>
+            </Row>
+        : 
+        <Row>
+            <Col md={2} mdPush={11} className="img_profile">
+                 <img src={message.portrait}/>
+            </Col>
+            <Col md={10} mdPull={1}>
+                 <div className="message_name">
+                     <strong>{message.userName}</strong>
+                     <p className="message_time">{message.time}</p>
+                 </div> <br/>
+                 <div className="message_body">
+                 {message.message}
+                 </div>
+            </Col>
+        </Row>
+        }
         </div>
     )
 }

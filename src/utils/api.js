@@ -16,3 +16,9 @@ export const getPageViews = () =>
   fetch(`${api}/pageViews`, { method: 'GET', headers })
     .then(res => res.json())
     .then(data => data)
+
+//Get messages
+export const getMessages = () =>
+  fetch(`${api}/messages`, { method: 'GET', headers })
+    .then(res => res.json())
+    .then(data => data)
