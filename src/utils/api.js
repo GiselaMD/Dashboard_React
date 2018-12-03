@@ -22,3 +22,13 @@ export const getMessages = () =>
   fetch(`${api}/messages`, { method: 'GET', headers })
     .then(res => res.json())
     .then(data => data)
+
+//Send message
+export const sendMessage = (newMessage) =>
+  fetch(`${api}/messages`, { 
+    method: 'POST', 
+    headers: {
+      ...headers
+    },
+    body: JSON.stringify({newMessage})
+  }).then(res => res.json())

@@ -1,6 +1,7 @@
-import {getMessages} from '../utils/api'
+import {getMessages, sendMessage} from '../utils/api'
 
 export const GET_MESSAGES = 'GET_MESSAGES'
+export const ADD_MESSAGE = 'ADD_MESSAGE'
 
 export const fetchMessages = () => dispatch => (
     getMessages()
@@ -11,3 +12,10 @@ export const fetchMessages = () => dispatch => (
             }) 
       })
   )
+
+export const createMessage = (message) => {
+  return (dispatch) => {
+    sendMessage(message).then(
+      () => dispatch({ type: ADD_MESSAGE, message })
+    )}
+}

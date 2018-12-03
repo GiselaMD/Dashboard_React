@@ -9,10 +9,10 @@ const MessageCard = (props) => {
         <div className="message_box">
             {message.displayPortraitLeft ? 
             <Row>
-                <Col md={2} className="img_profile"> 
+                <Col xs={2} sm={2} md={2} className="img_profile"> 
                     <img src={message.portrait}/>
                 </Col>
-                <Col md={10}>
+                <Col xs={6} sm={8} md={8} lg={10}>
                     <div className="message_name">
                         <strong>{message.userName}</strong>
                         <p className="message_time">{message.time}</p>
@@ -24,10 +24,7 @@ const MessageCard = (props) => {
             </Row>
         : 
         <Row>
-            <Col md={2} mdPush={11} className="img_profile">
-                 <img src={message.portrait}/>
-            </Col>
-            <Col md={10} mdPull={1}>
+            <Col xs={6} sm={8} md={8} lg={10}>
                  <div className="message_name">
                      <strong>{message.userName}</strong>
                      <p className="message_time">{message.time}</p>
@@ -36,6 +33,9 @@ const MessageCard = (props) => {
                  {message.message}
                  </div>
             </Col>
+            <Col xs={2} sm={2} md={2} className="img_profile">
+                 <img src={message.portrait}/>
+            </Col>            
         </Row>
         }
         </div>
