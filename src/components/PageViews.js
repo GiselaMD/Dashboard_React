@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './PageViews.css';
 import { connect } from 'react-redux';
 import {Line} from 'react-chartjs-2';
 import { fetchPageViews } from '../actions/pageViewsActions';
@@ -33,8 +34,7 @@ class PageViews extends Component {
         console.log("pageviews: ", this.props.pageViews);
         const {lineChartData} = this.state
         return(
-            
-            <div>
+            <div className="lineChart_box">
             {lineChartData ?   <Line
                     data={lineChartData}
                     options={{
@@ -42,9 +42,9 @@ class PageViews extends Component {
                         layout:{
                             padding:{
                                 left: 20,
-                                right: 20,
-                                top: 100,
-                                bottom: 100,
+                                right: 40,
+                                top: 40,
+                                bottom: 40,
                             }
                         },
                         title:{
