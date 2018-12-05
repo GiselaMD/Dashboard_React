@@ -26,11 +26,41 @@
     background-color: white;
     border-radius: 0 0 8px 8px;
     height: 60px;
+    border-top-style: solid;
+    border-top-color: #c9c9c9;
+    border-top-width: 1px;
 }
 .chat_box_input input {
     font-weight: 400;
+    margin-right: -2px!important;
+    margin-top: 14px;
     font-size: 22px;
-    width: 80%;
-    margin-right: 20px;
+    width: 85%;
     border-width: 0.5px;
+}
+.chat_button{
+    background-color: #7cd400 !important;
+    background-image: none !important;
+    border: 0px !important;
+    border-radius: 0 6px 6px 0;
+    padding: 8px 20px !important;
+    margin-bottom: 2px;
+}
+.chat_button:hover{
+    background-color: #65a014 !important;
+}
+
+@media screen and (max-width: 992px) {
+    .chat_button{
+        padding: 7px 20px !important;
+        margin-bottom: 4px;
+    }
+}
+@media screen and (max-width: 540px) {
+    .chat_button{
+        margin-bottom: 4px;
+    }
+    .chat_box_input input{
+        width: 75%;
+    }
 }

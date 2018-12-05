@@ -15,7 +15,9 @@ class App extends Component {
           <WidgetsBlock/>
           <PageViews/>
           <Chat/>
-          <p className="copyright">Developed by Gisela Miranda Difini</p>
+          <p className="copyright">
+            Developed by Gisela Miranda Difini
+          </p>
         </header>
       </div>
     );

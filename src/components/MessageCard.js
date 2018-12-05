@@ -18,7 +18,7 @@ const MessageCard = (props) => {
                     {message.message}
                     </div>
                 </Col>
-                <Col xs={2} sm={2} md={2} className="img_profile">
+                <Col xs={2} sm={2} md={2} className="img_profile float_right">
                     <img src={message.portrait}/>
                 </Col>            
             </Row>

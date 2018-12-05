@@ -17,7 +17,9 @@
     padding: 0;
     background-color: #f8c06d;
 }
-
+.float_right{
+    float: right;
+}
 .img_profile > img{
     display: block;
     position: relative;

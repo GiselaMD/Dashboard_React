@@ -12,6 +12,9 @@ class Chat extends Component {
         message: '',
         notValid: false,
     }
+
+    messagesEnd = React.createRef()
+
     componentDidMount(){
         this.props.getMessages();
     }
@@ -32,16 +35,22 @@ class Chat extends Component {
           this.setState({
               message: '',
           })
+          
         } else {
           this.setState({
             notValid: true
           })
         }
+        this.scrollToBottom();
       }
     
     handleMessageChange(e) {
     this.setState({ message: e.target.value })
     console.log(this.state.message)
+    }
+
+    scrollToBottom = () => {
+        this.messagesEnd.current.scrollIntoView({ behavior: 'smooth', block: "start"})
     }
 
     render(){
@@ -57,7 +66,13 @@ class Chat extends Component {
                         <div className="messages_box">
                             {messages ? messages.map((message) => {
                                 return(
-                                    <MessageCard key={message.index} message={message}/>
+                                    <div>
+                                        <MessageCard 
+                                            key={message.index} 
+                                            message={message} 
+                                        />
+                                        <div ref={this.messagesEnd}/>
+                                    </div>
                                 )
                             })
                             : null}
@@ -69,7 +84,7 @@ class Chat extends Component {
                                         placeholder={'Type your message...'} 
                                         onChange={(e) => this.handleMessageChange(e)}
                                         value={this.state.message}/>
-                                    <Button type="submit" bsStyle="primary">Send</Button>
+                                    <Button type="submit" bsStyle="primary" className="chat_button">Send</Button>
                             </form>
                         </div>
                         <div>

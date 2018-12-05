@@ -30,10 +30,10 @@ class WidgetsBlock extends Component {
         return(
             <div>
                 <Row className="rowWidgetsBlock">
-                    <Col sm={12} md={6} lg={3}><WidgetsCard iconClass="icon_blue" icon={<FaShoppingBag/>} title="NewOrders" value={widgets.newOrders}/></Col>
-                    <Col sm={12} md={6} lg={3}><WidgetsCard iconClass="icon_orange" icon={<FaComment/>} title="Comments" value={widgets.comments}/></Col>
-                    <Col sm={12} md={6} lg={3}><WidgetsCard iconClass="icon_green" icon={<FaUser/>} title="NewUsers" value={widgets.newUsers}/></Col>
-                    <Col sm={12} md={6} lg={3}><WidgetsCard iconClass="icon_red" icon={<FaColumns/>} title="PageViews" value={this.pageViewsFormatted(widgets.pageViews)}/></Col>
+                    <Col sm={12} md={6} lg={3}><WidgetsCard iconClass="icon_blue"   icon={<FaShoppingBag/>} title="NewOrders" value={widgets.newOrders}/></Col>
+                    <Col sm={12} md={6} lg={3}><WidgetsCard iconClass="icon_orange" icon={<FaComment/>}     title="Comments"  value={widgets.comments}/></Col>
+                    <Col sm={12} md={6} lg={3}><WidgetsCard iconClass="icon_green"  icon={<FaUser/>}        title="NewUsers"  value={widgets.newUsers}/></Col>
+                    <Col sm={12} md={6} lg={3}><WidgetsCard iconClass="icon_red"    icon={<FaColumns/>}     title="PageViews" value={this.pageViewsFormatted(widgets.pageViews)}/></Col>
                 </Row>
                 
             </div>

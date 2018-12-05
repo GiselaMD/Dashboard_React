@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import './WidgetsCard.css'
 import { Row, Col} from 'react-bootstrap'
-import {FaShoppingBag} from 'react-icons/fa'
 
 const WidgetsCard = (props) => {
     return(
